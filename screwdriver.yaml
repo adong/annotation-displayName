@@ -1,0 +1,20 @@
+jobs:
+  main:
+    requires: [~commit]
+    image: node:18
+    steps:
+      - noop: echo "NOOP"
+
+  job1:
+    requires: [main]
+    image: node:18
+    steps:
+      - noop: echo "NOOP"
+
+  jacksonIII:
+    annotations:
+      screwdriver.cd/displayName: "50 cent"
+    requires: [main]
+    image: node:18
+    steps:
+      - noop: echo "NOOP"
